@@ -1,0 +1,284 @@
+<div class="workflow-creator-container">
+  <div class="creator-header">
+    <h2>
+      <mat-icon>schema</mat-icon>
+      Workflow Creator
+    </h2>
+    <p>Design and create custom banking workflows with visual step management</p>
+  </div>
+
+  <mat-tab-group>
+    <!-- Templates Tab -->
+    <mat-tab label="Templates">
+      <div class="templates-section">
+        <h3>Banking Workflow Templates</h3>
+        <p class="section-subtitle">Start with pre-built workflows for common banking processes</p>
+        
+        <div class="templates-grid">
+          <mat-card 
+            *ngFor="let template of bankingTemplates" 
+            class="template-card clickable"
+            (click)="loadTemplate(template)">
+            <mat-card-header>
+              <mat-card-title>{{ template.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ template.description }}</p>
+              <div class="template-stats">
+                <mat-chip-set>
+                  <mat-chip>{{ template.steps.length }} Steps</mat-chip>
+                  <mat-chip>{{ template.transitions.length }} Transitions</mat-chip>
+                </mat-chip-set>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="primary">
+                <mat-icon>download</mat-icon>
+                Load Template
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+
+    <!-- Basic Info Tab -->
+    <mat-tab label="Basic Info">
+      <div class="basic-info-section">
+        <h3>Workflow Information</h3>
+        <form [formGroup]="workflowForm" class="workflow-form">
+          <mat-form-field class="full-width">
+            <mat-label>Workflow Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter workflow name">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea 
+              matInput 
+              formControlName="description" 
+              rows="4" 
+              placeholder="Describe the purpose and process of this workflow">
+            </textarea>
+          </mat-form-field>
+        </form>
+      </div>
+    </mat-tab>
+
+    <!-- Steps Tab -->
+    <mat-tab label="Steps">
+      <div class="steps-section">
+        <div class="section-header">
+          <h3>Workflow Steps</h3>
+          <button mat-raised-button color="primary" (click)="addStep()">
+            <mat-icon>add</mat-icon>
+            Add Step
+          </button>
+        </div>
+
+        <div class="steps-list" *ngIf="steps.length > 0">
+          <mat-card 
+            *ngFor="let step of steps; let i = index; trackBy: trackByStepId" 
+            class="step-card">
+            <mat-card-header>
+              <mat-card-title>
+                Step {{ i + 1 }}
+                <button mat-icon-button color="warn" (click)="removeStep(i)" class="remove-button">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="step-form">
+                <mat-form-field class="half-width">
+                  <mat-label>Step Name</mat-label>
+                  <input matInput [(ngModel)]="step.name" placeholder="Enter step name">
+                </mat-form-field>
+
+                <mat-form-field class="half-width">
+                  <mat-label>Step Type</mat-label>
+                  <mat-select [(ngModel)]="step.type">
+                    <mat-option *ngFor="let type of stepTypes" [value]="type.value">
+                      {{ type.label }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width" *ngIf="step.type !== 'automatic'">
+                  <mat-label>Assigned Role</mat-label>
+                  <mat-select [(ngModel)]="step.assignedRole">
+                    <mat-option *ngFor="let role of bankingRoles" [value]="role">
+                      {{ role }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width" *ngIf="step.type !== 'automatic'">
+                  <mat-label>Assigned User (Optional)</mat-label>
+                  <input matInput [(ngModel)]="step.assignedUser" placeholder="Specific user email">
+                </mat-form-field>
+
+                <div class="step-options">
+                  <mat-checkbox [(ngModel)]="step.isRequired">Required Step</mat-checkbox>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="empty-state" *ngIf="steps.length === 0">
+          <mat-icon class="empty-icon">schema</mat-icon>
+          <h4>No steps defined</h4>
+          <p>Add steps to define your workflow process</p>
+          <button mat-raised-button color="primary" (click)="addStep()">
+            <mat-icon>add</mat-icon>
+            Add First Step
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+
+    <!-- Transitions Tab -->
+    <mat-tab label="Transitions">
+      <div class="transitions-section">
+        <div class="section-header">
+          <h3>Step Transitions</h3>
+          <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="addTransition()"
+            [disabled]="steps.length < 2">
+            <mat-icon>arrow_forward</mat-icon>
+            Add Transition
+          </button>
+        </div>
+
+        <div class="transitions-list" *ngIf="transitions.length > 0">
+          <mat-card 
+            *ngFor="let transition of transitions; let i = index; trackBy: trackByTransitionId" 
+            class="transition-card">
+            <mat-card-header>
+              <mat-card-title>
+                Transition {{ i + 1 }}
+                <button mat-icon-button color="warn" (click)="removeTransition(i)" class="remove-button">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="transition-form">
+                <mat-form-field class="half-width">
+                  <mat-label>From Step</mat-label>
+                  <mat-select [(ngModel)]="transition.fromStepId">
+                    <mat-option *ngFor="let step of steps" [value]="step.id">
+                      {{ step.name || 'Step ' + step.id }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width">
+                  <mat-label>To Step</mat-label>
+                  <mat-select [(ngModel)]="transition.toStepId">
+                    <mat-option *ngFor="let step of steps" [value]="step.id">
+                      {{ step.name || 'Step ' + step.id }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width">
+                  <mat-label>Action</mat-label>
+                  <mat-select [(ngModel)]="transition.action">
+                    <mat-option value="approve">Approve</mat-option>
+                    <mat-option value="reject">Reject</mat-option>
+                    <mat-option value="complete">Complete</mat-option>
+                    <mat-option value="escalate">Escalate</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width">
+                  <mat-label>Condition (Optional)</mat-label>
+                  <input matInput [(ngModel)]="transition.condition" placeholder="e.g., amount > 10000">
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="empty-state" *ngIf="transitions.length === 0">
+          <mat-icon class="empty-icon">arrow_forward</mat-icon>
+          <h4>No transitions defined</h4>
+          <p>Add transitions to connect your workflow steps</p>
+          <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="addTransition()"
+            [disabled]="steps.length < 2">
+            <mat-icon>arrow_forward</mat-icon>
+            Add First Transition
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+
+    <!-- Preview Tab -->
+    <mat-tab label="Preview">
+      <div class="preview-section">
+        <div class="section-header">
+          <h3>Workflow Definition Preview</h3>
+          <div class="preview-actions">
+            <button mat-button (click)="previewDefinition()">
+              <mat-icon>visibility</mat-icon>
+              View Console
+            </button>
+            <button mat-raised-button color="accent" (click)="saveWorkflow()" 
+                    [disabled]="!workflowForm.valid || steps.length === 0">
+              <mat-icon>save</mat-icon>
+              Save Workflow
+            </button>
+          </div>
+        </div>
+
+        <mat-card class="definition-preview">
+          <mat-card-header>
+            <mat-card-title>JSON Definition</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <pre class="json-preview">{{ generateWorkflowDefinition() }}</pre>
+          </mat-card-content>
+        </mat-card>
+
+        <div class="workflow-summary">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Workflow Summary</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="summary-stats">
+                <div class="stat-item">
+                  <mat-icon>schema</mat-icon>
+                  <span class="stat-number">{{ steps.length }}</span>
+                  <span class="stat-label">Steps</span>
+                </div>
+                <div class="stat-item">
+                  <mat-icon>arrow_forward</mat-icon>
+                  <span class="stat-number">{{ transitions.length }}</span>
+                  <span class="stat-label">Transitions</span>
+                </div>
+                <div class="stat-item">
+                  <mat-icon>people</mat-icon>
+                  <span class="stat-number">{{ getUniqueRoles().length }}</span>
+                  <span class="stat-label">Roles</span>
+                </div>
+                <div class="stat-item">
+                  <mat-icon>approval</mat-icon>
+                  <span class="stat-number">{{ getApprovalStepsCount() }}</span>
+                  <span class="stat-label">Approvals</span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

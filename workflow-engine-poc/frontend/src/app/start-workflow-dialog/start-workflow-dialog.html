@@ -1,0 +1,50 @@
+<div class="start-workflow-dialog">
+  <h2 mat-dialog-title>
+    <mat-icon>play_circle</mat-icon>
+    Start New Workflow
+  </h2>
+
+  <mat-dialog-content>
+    <form [formGroup]="startForm" class="workflow-form">
+      <mat-form-field class="full-width">
+        <mat-label>Select Workflow</mat-label>
+        <mat-select formControlName="workflowId" (selectionChange)="onWorkflowChange()">
+          <mat-option *ngFor="let workflow of workflows" [value]="workflow.id">
+            {{ workflow.name }} - {{ workflow.description }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Initiated By</mat-label>
+        <input matInput formControlName="initiatedBy" placeholder="User email or system">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Initial Data (JSON)</mat-label>
+        <textarea 
+          matInput 
+          formControlName="data" 
+          rows="10"
+          placeholder="Enter workflow initial data as JSON">
+        </textarea>
+        <mat-hint>Provide the initial data for the workflow in JSON format</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()" [disabled]="loading">
+      Cancel
+    </button>
+    <button 
+      mat-raised-button 
+      color="primary" 
+      (click)="onSubmit()" 
+      [disabled]="!startForm.valid || loading">
+      <mat-icon *ngIf="!loading">play_arrow</mat-icon>
+      <mat-icon *ngIf="loading">refresh</mat-icon>
+      {{ loading ? 'Starting...' : 'Start Workflow' }}
+    </button>
+  </mat-dialog-actions>
+</div>

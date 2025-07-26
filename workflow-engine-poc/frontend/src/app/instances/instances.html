@@ -1,0 +1,133 @@
+<div class="instances-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Workflow Instances</mat-card-title>
+      <mat-card-subtitle>Monitor and manage running workflows</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <!-- Filters -->
+      <div class="filters">
+        <mat-form-field appearance="outline">
+          <mat-label>Filter by Workflow</mat-label>
+          <mat-select [(value)]="selectedWorkflowId" (selectionChange)="onFilterChange()">
+            <mat-option value="">All Workflows</mat-option>
+            <mat-option *ngFor="let workflow of workflows" [value]="workflow.id">
+              {{ workflow.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Filter by Status</mat-label>
+          <mat-select [(value)]="selectedStatus" (selectionChange)="onFilterChange()">
+            <mat-option *ngFor="let status of statusOptions" [value]="status.value">
+              {{ status.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      @if (loading) {
+        <div class="loading">
+          <p>Loading workflow instances...</p>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+      } @else {
+        <table mat-table [dataSource]="instances" class="instances-table">
+          
+          <ng-container matColumnDef="workflowName">
+            <th mat-header-cell *matHeaderCellDef>Workflow</th>
+            <td mat-cell *matCellDef="let instance">
+              <div class="workflow-info">
+                <strong>{{ instance.workflowName }}</strong>
+                <br>
+                <small>ID: {{ instance.id.substring(0, 8) }}...</small>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let instance">
+              <mat-chip [color]="getStatusColor(instance.status)">
+                {{ instance.status }}
+              </mat-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="currentStep">
+            <th mat-header-cell *matHeaderCellDef>Current Step</th>
+            <td mat-cell *matCellDef="let instance">
+              @if (instance.currentStepName) {
+                <div class="step-info">
+                  {{ instance.currentStepName }}
+                </div>
+              } @else {
+                <span class="no-step">-</span>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="startedAt">
+            <th mat-header-cell *matHeaderCellDef>Started</th>
+            <td mat-cell *matCellDef="let instance">{{ instance.startedAt | date:'short' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="initiatedBy">
+            <th mat-header-cell *matHeaderCellDef>Initiated By</th>
+            <td mat-cell *matCellDef="let instance">{{ instance.initiatedBy }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="progress">
+            <th mat-header-cell *matHeaderCellDef>Progress</th>
+            <td mat-cell *matCellDef="let instance">
+              <div class="progress-info">
+                <mat-progress-bar 
+                  mode="determinate" 
+                  [value]="getProgressPercentage(instance)"
+                  [color]="instance.status === 'Completed' ? 'accent' : 'primary'">
+                </mat-progress-bar>
+                <span class="progress-text">{{ getProgressPercentage(instance) }}%</span>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let instance">
+              <button mat-button (click)="viewInstanceDetails(instance)">
+                <mat-icon>visibility</mat-icon>
+                Details
+              </button>
+              @if (instance.status === 'Running') {
+                <button mat-button color="warn" (click)="cancelInstance(instance)">
+                  <mat-icon>cancel</mat-icon>
+                  Cancel
+                </button>
+              }
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        @if (instances.length === 0) {
+          <div class="no-data">
+            <mat-icon>inbox</mat-icon>
+            <p>No workflow instances found.</p>
+            <p>Start a new workflow to see instances here.</p>
+          </div>
+        }
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="startNewWorkflow()">
+        <mat-icon>play_arrow</mat-icon>
+        Start New Workflow
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

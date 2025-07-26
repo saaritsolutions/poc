@@ -1,0 +1,150 @@
+<div class="tasks-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>My Tasks</mat-card-title>
+      <mat-card-subtitle>Tasks assigned to you requiring action</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <!-- Priority Filter -->
+      <div class="filters">
+        <mat-form-field appearance="outline">
+          <mat-label>Filter by Priority</mat-label>
+          <mat-select [(value)]="selectedPriority">
+            <mat-option *ngFor="let priority of priorityOptions" [value]="priority.value">
+              {{ priority.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      @if (loading) {
+        <div class="loading">
+          <p>Loading your tasks...</p>
+        </div>
+      } @else {
+        <table mat-table [dataSource]="getFilteredTasks()" class="tasks-table">
+          
+          <ng-container matColumnDef="workflowName">
+            <th mat-header-cell *matHeaderCellDef>Workflow</th>
+            <td mat-cell *matCellDef="let instance">
+              <div class="workflow-info">
+                <strong>{{ instance.workflowName }}</strong>
+                <br>
+                <small>Instance: {{ instance.id.substring(0, 8) }}...</small>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="stepName">
+            <th mat-header-cell *matHeaderCellDef>Current Step</th>
+            <td mat-cell *matCellDef="let instance">
+              @if (getCurrentStep(instance)) {
+                <div class="step-info">
+                  <strong>{{ getCurrentStep(instance)!.stepName }}</strong>
+                  <br>
+                  <small>{{ getCurrentStep(instance)!.stepId }}</small>
+                </div>
+              } @else {
+                <span class="no-step">No pending step</span>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="priority">
+            <th mat-header-cell *matHeaderCellDef>Priority</th>
+            <td mat-cell *matCellDef="let instance">
+              <mat-chip [color]="getPriorityColor(getPriorityLevel(instance))">
+                {{ getPriorityLevel(instance).toUpperCase() }}
+              </mat-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="startedAt">
+            <th mat-header-cell *matHeaderCellDef>Started</th>
+            <td mat-cell *matCellDef="let instance">
+              {{ instance.startedAt | date:'short' }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="assignedRole">
+            <th mat-header-cell *matHeaderCellDef>Role</th>
+            <td mat-cell *matCellDef="let instance">
+              @if (getCurrentStep(instance)?.assignedRole) {
+                <mat-chip color="accent">
+                  {{ getCurrentStep(instance)!.assignedRole }}
+                </mat-chip>
+              } @else {
+                <span class="no-role">-</span>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let instance">
+              <div class="action-buttons">
+                <button mat-raised-button color="primary" (click)="approveTask(instance)">
+                  <mat-icon>check</mat-icon>
+                  Approve
+                </button>
+                <button mat-raised-button color="warn" (click)="rejectTask(instance)">
+                  <mat-icon>close</mat-icon>
+                  Reject
+                </button>
+                <button mat-button (click)="viewInstanceDetails(instance)">
+                  <mat-icon>visibility</mat-icon>
+                  Details
+                </button>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="task-row"></tr>
+        </table>
+
+        @if (getFilteredTasks().length === 0) {
+          <div class="no-data">
+            <mat-icon>task_alt</mat-icon>
+            @if (userTasks.length === 0) {
+              <p>No tasks assigned to you.</p>
+              <p>Check back later for new assignments.</p>
+            } @else {
+              <p>No tasks match the selected priority filter.</p>
+            }
+          </div>
+        }
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Quick Stats Card -->
+  @if (!loading && userTasks.length > 0) {
+    <mat-card class="stats-card">
+      <mat-card-header>
+        <mat-card-title>Task Summary</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">{{ userTasks.length }}</div>
+            <div class="stat-label">Total Tasks</div>
+          </div>
+          <div class="stat-item high-priority">
+            <div class="stat-number">{{ getHighPriorityCount() }}</div>
+            <div class="stat-label">High Priority</div>
+          </div>
+          <div class="stat-item medium-priority">
+            <div class="stat-number">{{ getMediumPriorityCount() }}</div>
+            <div class="stat-label">Medium Priority</div>
+          </div>
+          <div class="stat-item low-priority">
+            <div class="stat-number">{{ getLowPriorityCount() }}</div>
+            <div class="stat-label">Low Priority</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

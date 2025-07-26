@@ -1,0 +1,22 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-content {
+  padding: 20px;
+  min-height: calc(100vh - 64px);
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+button[mat-button] {
+  margin-left: 8px;
+}
+
+button[mat-button] mat-icon {
+  margin-right: 4px;
+}

@@ -1,0 +1,87 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.metric-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  &.quick-start-card {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border: 2px solid #1976d2;
+    
+    &:hover {
+      background: linear-gradient(135deg, #bbdefb, #90caf9);
+    }
+  }
+  
+  &.create-workflow-card {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border: 2px solid #ff9800;
+    
+    &:hover {
+      background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+    }
+  }
+  
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    padding: 20px !important;
+  }
+}
+
+.metric-icon {
+  margin-right: 15px;
+  
+  mat-icon {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.metric-info {
+  h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+.recent-activity {
+  margin-top: 30px;
+  
+  h3 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+}

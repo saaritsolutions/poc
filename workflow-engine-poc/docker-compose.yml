@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: workflow_postgres
+    environment:
+      POSTGRES_DB: workflow_engine
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  workflow-api:
+    build:
+      context: ./backend
+      dockerfile: WorkflowEngine.API/Dockerfile
+    container_name: workflow_api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=workflow_engine;Username=postgres;Password=postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/src
+    command: ["dotnet", "watch", "run", "--project", "WorkflowEngine.API"]
+
+  workflow-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: workflow_frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: ["npm", "start"]
+
+volumes:
+  postgres_data:

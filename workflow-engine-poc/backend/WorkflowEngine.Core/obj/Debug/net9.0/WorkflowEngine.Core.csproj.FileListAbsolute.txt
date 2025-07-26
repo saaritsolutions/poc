@@ -1,0 +1,12 @@
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/bin/Debug/net9.0/WorkflowEngine.Core.deps.json
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/bin/Debug/net9.0/WorkflowEngine.Core.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/bin/Debug/net9.0/WorkflowEngine.Core.pdb
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.AssemblyInfoInputs.cache
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.AssemblyInfo.cs
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.csproj.CoreCompileInputs.cache
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.sourcelink.json
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/refint/WorkflowEngine.Core.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/WorkflowEngine.Core.pdb
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Core/obj/Debug/net9.0/ref/WorkflowEngine.Core.dll

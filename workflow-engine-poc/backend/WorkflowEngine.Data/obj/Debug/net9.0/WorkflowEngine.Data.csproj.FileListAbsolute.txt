@@ -1,0 +1,16 @@
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.csproj.AssemblyReference.cache
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.AssemblyInfoInputs.cache
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.AssemblyInfo.cs
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.csproj.CoreCompileInputs.cache
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.sourcelink.json
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/bin/Debug/net9.0/WorkflowEngine.Data.deps.json
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/bin/Debug/net9.0/WorkflowEngine.Data.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/bin/Debug/net9.0/WorkflowEngine.Data.pdb
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/bin/Debug/net9.0/WorkflowEngine.Core.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/bin/Debug/net9.0/WorkflowEngine.Core.pdb
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/Workflow.0F2B5F2E.Up2Date
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/refint/WorkflowEngine.Data.dll
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/WorkflowEngine.Data.pdb
+/Users/apple/GithubRepos/poc/workflow-engine-poc/backend/WorkflowEngine.Data/obj/Debug/net9.0/ref/WorkflowEngine.Data.dll

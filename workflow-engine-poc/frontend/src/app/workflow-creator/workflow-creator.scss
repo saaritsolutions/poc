@@ -1,0 +1,335 @@
+.workflow-creator-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.creator-header {
+  margin-bottom: 32px;
+  text-align: center;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1976d2;
+
+    mat-icon {
+      font-size: 2.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  p {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+// Templates Section
+.templates-section {
+  padding: 24px;
+
+  h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+  }
+
+  .section-subtitle {
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .template-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .template-stats {
+      margin-top: 16px;
+
+      mat-chip-set {
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+// Basic Info Section
+.basic-info-section {
+  padding: 24px;
+
+  h3 {
+    margin: 0 0 24px 0;
+    color: #333;
+  }
+
+  .workflow-form {
+    max-width: 600px;
+
+    .full-width {
+      width: 100%;
+    }
+  }
+}
+
+// Steps Section
+.steps-section {
+  padding: 24px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h3 {
+      margin: 0;
+      color: #333;
+    }
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-card {
+    position: relative;
+
+    .remove-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .step-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+
+      .step-options {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+// Transitions Section
+.transitions-section {
+  padding: 24px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h3 {
+      margin: 0;
+      color: #333;
+    }
+  }
+
+  .transitions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .transition-card {
+    position: relative;
+
+    .remove-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .transition-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+  }
+}
+
+// Preview Section
+.preview-section {
+  padding: 24px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  .definition-preview {
+    margin-bottom: 24px;
+
+    .json-preview {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  .workflow-summary {
+    .summary-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        background: #f8f9fa;
+        border-radius: 8px;
+
+        mat-icon {
+          color: #1976d2;
+          font-size: 2rem;
+          width: 2rem;
+          height: 2rem;
+          margin-bottom: 8px;
+        }
+
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 4px;
+        }
+
+        .stat-label {
+          font-size: 0.9rem;
+          color: #666;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+// Empty States
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #666;
+
+  .empty-icon {
+    font-size: 4rem;
+    width: 4rem;
+    height: 4rem;
+    color: #ddd;
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0 0 24px 0;
+    font-size: 0.9rem;
+  }
+}
+
+// Common Utilities
+.clickable {
+  cursor: pointer;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  flex: 1;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .workflow-creator-container {
+    padding: 16px;
+  }
+
+  .templates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-form,
+  .transition-form {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    .preview-actions {
+      justify-content: center;
+    }
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Angular Material Tab Overrides
+::ng-deep .mat-mdc-tab-group {
+  .mat-mdc-tab-header {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .mat-mdc-tab-body-wrapper {
+    padding-top: 0;
+  }
+}

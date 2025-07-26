@@ -1,0 +1,125 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{ title() }}</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/workflows">
+      <mat-icon>view_list</mat-icon>
+      Workflows
+    </button>
+    <button mat-button routerLink="/instances">
+      <mat-icon>playlist_play</mat-icon>
+      Instances
+    </button>
+    <button mat-button routerLink="/tasks">
+      <mat-icon>task</mat-icon>
+      My Tasks
+    </button>
+    <button mat-button routerLink="/create-workflow">
+      <mat-icon>add_circle</mat-icon>
+      Create Workflow
+    </button>
+    <button mat-button routerLink="/workflow-canvas">
+      <mat-icon>schema</mat-icon>
+      Canvas Designer
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main-content">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>account_balance</mat-icon>
+        Core Banking Workflow Engine
+      </mat-card-title>
+      <mat-card-subtitle>Manage your banking workflows efficiently</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="dashboard-grid">
+        <mat-card class="metric-card" routerLink="/workflows">
+          <mat-card-content>
+            <div class="metric-icon">
+              <mat-icon>schema</mat-icon>
+            </div>
+            <div class="metric-info">
+              <h3>5</h3>
+              <p>Active Workflows</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card" routerLink="/instances">
+          <mat-card-content>
+            <div class="metric-icon">
+              <mat-icon color="accent">play_circle</mat-icon>
+            </div>
+            <div class="metric-info">
+              <h3>12</h3>
+              <p>Running Instances</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card" routerLink="/tasks">
+          <mat-card-content>
+            <div class="metric-icon">
+              <mat-icon color="warn">task</mat-icon>
+            </div>
+            <div class="metric-info">
+              <h3>8</h3>
+              <p>Pending Tasks</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card quick-start-card" (click)="quickStartWorkflow('loan')">
+          <mat-card-content>
+            <div class="metric-icon">
+              <mat-icon color="primary">play_arrow</mat-icon>
+            </div>
+            <div class="metric-info">
+              <h3>Start</h3>
+              <p>Loan Application</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card create-workflow-card" (click)="openWorkflowCreator()">
+          <mat-card-content>
+            <div class="metric-icon">
+              <mat-icon color="accent">add_circle</mat-icon>
+            </div>
+            <div class="metric-info">
+              <h3>Create</h3>
+              <p>New Workflow</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>check_circle</mat-icon>
+            <div matListItemTitle>Loan Application #LA-2023-001 approved</div>
+            <div matListItemLine>2 minutes ago</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>schedule</mat-icon>
+            <div matListItemTitle>Account Opening #AO-2023-045 pending review</div>
+            <div matListItemLine>15 minutes ago</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>error</mat-icon>
+            <div matListItemTitle>Credit Check #CC-2023-112 failed</div>
+            <div matListItemLine>1 hour ago</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <router-outlet />
+</div>
