@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PluginDebugTest/1.0.0": {
+        "dependencies": {
+          "TenantPluginArchitecture.Plugins.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "PluginDebugTest.dll": {}
+        }
+      },
+      "TenantPluginArchitecture.Plugins.Contracts/1.0.0": {
+        "runtime": {
+          "TenantPluginArchitecture.Plugins.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PluginDebugTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TenantPluginArchitecture.Plugins.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

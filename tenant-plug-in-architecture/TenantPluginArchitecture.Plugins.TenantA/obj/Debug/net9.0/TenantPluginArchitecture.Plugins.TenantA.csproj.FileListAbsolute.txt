@@ -1,0 +1,16 @@
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.deps.json
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.pdb
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.pdb
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.csproj.AssemblyReference.cache
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.AssemblyInfoInputs.cache
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.AssemblyInfo.cs
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.csproj.CoreCompileInputs.cache
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.sourcelink.json
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPl.96ACE095.Up2Date
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/refint/TenantPluginArchitecture.Plugins.TenantA.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.TenantA.pdb
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.TenantA/obj/Debug/net9.0/ref/TenantPluginArchitecture.Plugins.TenantA.dll

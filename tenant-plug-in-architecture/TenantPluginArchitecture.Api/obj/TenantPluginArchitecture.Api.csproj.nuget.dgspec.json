@@ -1,0 +1,212 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/TenantPluginArchitecture.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/TenantPluginArchitecture.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/TenantPluginArchitecture.Api.csproj",
+        "projectName": "TenantPluginArchitecture.Api",
+        "projectPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/TenantPluginArchitecture.Api.csproj",
+        "packagesPath": "/Users/apple/.nuget/packages/",
+        "outputPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/apple/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/TenantPluginArchitecture.Core.csproj": {
+                "projectPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/TenantPluginArchitecture.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/TenantPluginArchitecture.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/TenantPluginArchitecture.Core.csproj",
+        "projectName": "TenantPluginArchitecture.Core",
+        "projectPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/TenantPluginArchitecture.Core.csproj",
+        "packagesPath": "/Users/apple/.nuget/packages/",
+        "outputPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/apple/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/TenantPluginArchitecture.Plugins.Contracts.csproj": {
+                "projectPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/TenantPluginArchitecture.Plugins.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/TenantPluginArchitecture.Plugins.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/TenantPluginArchitecture.Plugins.Contracts.csproj",
+        "projectName": "TenantPluginArchitecture.Plugins.Contracts",
+        "projectPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/TenantPluginArchitecture.Plugins.Contracts.csproj",
+        "packagesPath": "/Users/apple/.nuget/packages/",
+        "outputPath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/apple/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

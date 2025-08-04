@@ -1,0 +1,12 @@
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.deps.json
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/bin/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.pdb
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.AssemblyInfoInputs.cache
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.AssemblyInfo.cs
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.csproj.CoreCompileInputs.cache
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.sourcelink.json
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/refint/TenantPluginArchitecture.Plugins.Contracts.dll
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/TenantPluginArchitecture.Plugins.Contracts.pdb
+/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Plugins.Contracts/obj/Debug/net9.0/ref/TenantPluginArchitecture.Plugins.Contracts.dll

@@ -1,0 +1,104 @@
+### Submit Form for TenantA
+POST https://localhost:5001/api/forms/submit
+Content-Type: application/json
+
+{
+  "formType": "UserRegistration",
+  "tenantId": "TenantA",
+  "userId": "testuser",
+  "fields": {
+    "email": "user@company.com",
+    "age": 25,
+    "name": "John Doe",
+    "phone": "1234567890"
+  }
+}
+
+###
+
+### Submit Form with Invalid Data (TenantA)
+POST https://localhost:5001/api/forms/submit
+Content-Type: application/json
+
+{
+  "formType": "UserRegistration",
+  "tenantId": "TenantA",
+  "userId": "testuser",
+  "fields": {
+    "email": "user@gmail.com",
+    "age": 16,
+    "name": "Jane Doe",
+    "phone": "1234567890"
+  }
+}
+
+###
+
+### Validate Form Only
+POST https://localhost:5001/api/forms/validate
+Content-Type: application/json
+
+{
+  "formType": "UserRegistration",
+  "tenantId": "TenantA",
+  "fields": {
+    "email": "test@company.com",
+    "age": 30,
+    "name": "Test User"
+  }
+}
+
+###
+
+### Start Workflow for TenantA
+POST https://localhost:5001/api/workflows/start
+Content-Type: application/json
+
+{
+  "tenantId": "TenantA",
+  "workflowType": "OrderProcessing",
+  "userId": "testuser",
+  "inputData": {
+    "customerType": "premium",
+    "orderValue": 1500.00,
+    "region": "North America"
+  }
+}
+
+###
+
+### Check Plugin Availability
+GET https://localhost:5001/api/plugins/available/TenantA
+
+###
+
+### Check Plugin Availability for Non-existing Tenant
+GET https://localhost:5001/api/plugins/available/TenantB
+
+###
+
+### Health Check
+GET https://localhost:5001/health
+
+###
+
+### Test with TenantB (no plugins)
+POST https://localhost:5001/api/forms/submit
+Content-Type: application/json
+
+{
+  "formType": "UserRegistration",
+  "tenantId": "TenantB",
+  "userId": "testuser",
+  "fields": {
+    "email": "user@gmail.com",
+    "age": 16,
+    "name": "Jane Doe",
+    "phone": "1234567890"
+  }
+}tPluginArchitecture.Api_HostAddress = http://localhost:5229
+
+GET {{TenantPluginArchitecture.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

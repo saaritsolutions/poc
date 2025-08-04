@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "nnZM/2YlaVA=",
+  "success": true,
+  "projectFilePath": "/Users/apple/GithubRepos/poc/tenant-plug-in-architecture/TenantPluginArchitecture.Api/TenantPluginArchitecture.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/apple/.nuget/packages/microsoft.aspnetcore.openapi/9.0.5/microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.extensions.apidescription.server/9.0.0/microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.7/microsoft.extensions.dependencyinjection.abstractions.9.0.7.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.7/microsoft.extensions.logging.abstractions.9.0.7.nupkg.sha512",
+    "/Users/apple/.nuget/packages/microsoft.openapi/1.6.23/microsoft.openapi.1.6.23.nupkg.sha512",
+    "/Users/apple/.nuget/packages/swashbuckle.aspnetcore/9.0.3/swashbuckle.aspnetcore.9.0.3.nupkg.sha512",
+    "/Users/apple/.nuget/packages/swashbuckle.aspnetcore.swagger/9.0.3/swashbuckle.aspnetcore.swagger.9.0.3.nupkg.sha512",
+    "/Users/apple/.nuget/packages/swashbuckle.aspnetcore.swaggergen/9.0.3/swashbuckle.aspnetcore.swaggergen.9.0.3.nupkg.sha512",
+    "/Users/apple/.nuget/packages/swashbuckle.aspnetcore.swaggerui/9.0.3/swashbuckle.aspnetcore.swaggerui.9.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
